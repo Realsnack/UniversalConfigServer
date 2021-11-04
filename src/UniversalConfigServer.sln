@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversalConfigServer", "UniversalConfigServer\UniversalConfigServer.csproj", "{24B9776C-155A-4DCD-A85E-6B5CFE3A0DC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24B9776C-155A-4DCD-A85E-6B5CFE3A0DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B9776C-155A-4DCD-A85E-6B5CFE3A0DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B9776C-155A-4DCD-A85E-6B5CFE3A0DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B9776C-155A-4DCD-A85E-6B5CFE3A0DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E909B02C-200E-46D4-A145-CE512EE4CCFB}
+	EndGlobalSection
+EndGlobal

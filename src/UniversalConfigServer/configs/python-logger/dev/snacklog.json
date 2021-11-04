@@ -1,0 +1,36 @@
+{
+    "logging": {
+        "toFile": {
+            "active": true,
+            "jsonFormat": false,
+            "logName": "python-logger",
+            "logPath": "C:/logs",
+            "logLevel": "INFO"
+        },
+        "toHttp": {
+            "active": true,
+            "url": "http://ubuntu01.vs.msvacina.cz:5045",
+            "logLevel": "TRACE",
+            "basicAuth": true,
+            "username": "",
+            "password": "",
+            "headersToAdd": {
+                "application": "python-logger-test"
+            },
+            "bodyToAdd": {
+                "index": "python-logger-test"
+            }
+        },
+        "toStdout": {
+            "active": true,
+            "logLevel": "DEBUG"
+        },
+        "logMessage": {
+            "timestampFormat": "%Y-%m-%dT%H:%M:%S.%f",
+            "timestamp": true,
+            "loggerName": true,
+            "level": true,
+            "pid": true
+        }
+    }
+}
