@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace UniversalConfigServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/")]
     [ApiController]
     public class ConfigurationController : ControllerBase
     {
