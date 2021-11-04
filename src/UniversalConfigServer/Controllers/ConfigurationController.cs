@@ -51,6 +51,7 @@ namespace UniversalConfigServer.Controllers
                 {
                     response = await reader.ReadToEndAsync();
                     // Return config file
+                    _logger.LogDebug($"Config {filePath} returned");
                     return Ok(response);
                 }
             }
