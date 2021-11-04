@@ -27,9 +27,20 @@ namespace UniversalConfigServer.Controllers
             return "{\"CloudConfigServer\": {\"version\": \"0.0.1\"}}";
         }
 
-        [HttpGet("config")]
+        [HttpGet("config/{appName}/{env}/{configName}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status418ImATeapot)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetConfigAsync(string appName, string env, string configName)
         {
+            if (appName is null || env is null || configName is null)
+            {
+                _logger.LogInformation($"One of the parameters is missing: appName: {appName}\tenv: {env}\tconfigName: {configName}");
+                return BadRequest();
+            }
+
             string response;
             string filePath = $"configs/{appName}/{env}/{configName}";
             // Load config file
@@ -45,7 +56,7 @@ namespace UniversalConfigServer.Controllers
             }
             catch (System.IO.DirectoryNotFoundException ex)
             {
-                _logger.LogInformation($"Directory {filePath} not found", ex);
+                _logger.LogWarning($"Directory {filePath} not found", ex);
                 return NotFound();
             }
             catch (System.IO.FileNotFoundException)
@@ -56,7 +67,7 @@ namespace UniversalConfigServer.Controllers
             catch (System.Exception ex)
             {
                 _logger.LogCritical("Unknown exception occuded while getting config file", ex);
-                throw;
+                return StatusCode(418);
             }
         }
     }
